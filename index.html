@@ -15,7 +15,10 @@
 <div class="gradient-bg"></div>
 
 <nav>
-  <div class="container">
+  <div class="container nav-wrap">
+    <div class="menu-toggle">
+      <i class="fas fa-bars"></i>
+   </div>
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -48,7 +51,7 @@
         </div>
       </div>
       <div class="hero-visual">
-        <img src="./image/Sars.jpg" alt="Prince" class="hero-img">
+        <img src="./image/Copilot_20260412_143534.png" alt="Prince" class="hero-img">
       </div>
     </div>
   </section>
@@ -263,11 +266,11 @@ and interactive UI for buyers and agents.
     });
   });
  const texts = [
-  "I build responsive and scalable full-stack web applications",
-  "Passionate about cybersecurity and secure system design",
-  "Exploring AI and building smart digital solutions",
-  "Turning ideas into real-world products through code",
-  "Focused on performance, clean UI, and user experience"
+ "Frontend Developer",
+ "Building Responsive Websites",
+ "Cybersecurity Enthusiast",
+ "React & JavaScript Projects",
+ "Modern UI / UX Creator"
 ];
 
 let i = 0; // which sentence
@@ -287,10 +290,10 @@ function typeEffect() {
 
     element.innerHTML = currentText;
 
-    let speed = isDeleting ? 40 : 80;
+    let speed = isDeleting ? 30 : 60;
 
     if (j === texts[i].length) {
-      isDeleting = true;
+      isDeleting = true;  
       speed = 1000; // pause before deleting
     } else if (j === 0) {
       isDeleting = false;
@@ -311,6 +314,17 @@ window.addEventListener("scroll", () => {
   } else {
     nav.classList.remove("scrolled");
   }
+});
+const toggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+document.querySelectorAll('.nav-links a').forEach(link=>{
+   link.addEventListener('click', ()=>{
+      navLinks.classList.remove('active');
+   });
 });
 </script>
 </body>
